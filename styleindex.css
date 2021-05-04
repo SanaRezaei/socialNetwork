@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Sriracha&display=swap');
+ * {
+	 margin: 0;
+	 padding: 0;
+	 box-sizing: border-box;
+     background:whitesmoke;
+}
+ body {
+	 display: flex;
+	 justify-content: right;
+     margin-left: 50px;
+	 align-items: right;
+	 height: 100vh;
+	 font-family: "Roboto", arial, sans-serif;
+	 color:black;
+}
+.header {
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.sana {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1200px;
+
+    
+}
+.buttons{
+    margin-top: 50px;
+}
+
+.img_tweet{
+  max-width: 50%;
+  max-height: max-content;
+
+}
+ #login-container {
+	 height: 400px;
+	 width: 800px;
+	 padding: 20px;
+	 border-radius: 5px;
+	 background: #fffffb;
+	 position: relative;
+	 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+	 margin-bottom: 50px;
+	 margin-left: 250px;
+}
+
+ #login-container .profile-img {
+	 height: 100px;
+	 width: 100px;
+	 background: url(./img/twitter_circle-512.png);
+	 background-size: cover;
+	 background-position: center;
+	 position: absolute;
+	 top: -25px;
+	 left: -25px;
+	 border-radius: 50%;
+	 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+ #login-container h1 {
+	 font-family: 'Sriracha', arial, sans-serif;
+	 text-align: center;
+	 margin-bottom: 20px;
+	 color: #1DA1F2;
+}
+ #login-container .description {
+	 margin-bottom: 20px;
+}
+ #login-container .social {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 width: calc(100% - 40px);
+	 margin: 0 auto;
+}
+
+ #login-container .social a:hover {
+	 background: #1DA1F2;
+	 color: white;
+	 cursor: pointer;
+}
+#login-container button {
+    width: 80%;
+    height: 80px;
+    font-size: 2rem;
+    margin: 30px 10% 0 10%;
+    color: #fffffb;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background: #1DA1F2;
+    background-size: 100% 100%;
+    outline: none;
+    transition: all 200ms ease-in-out;
+}
+ #login-container button:hover {
+	 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	 transform: translateY(2px);
+	 -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+	 animation: gradientBG 1.5s ease-in-out forwards;
+	 cursor: pointer;
+}
+ #login-container button:active {
+	 box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+	 transform: translateY(4px);
+}
+ #login-container footer {
+	 display: flex;
+	 justify-content: space-between;
+	 align-items: center;
+	 background: #5b5f97;
+     border: 2px solid black;
+	 color: black;
+	 width: 100%;
+	 position: absolute;
+	 bottom: 0;
+	 height: 30px;
+	 padding: 0 20px;
+	 margin-left: -20px;
+	 border-bottom-left-radius: 5px;
+	 border-bottom-right-radius: 5px;
+}
+ #login-container footer div {
+	 display: flex;
+     border: 2px solid white;
+     border-radius: 5px;
+}
+ #login-container footer div .fa-heart {
+	 color:red;
+     
+}
+ #login-container footer div p:first-child {
+	 margin-right: 10px;
+	 border-right: 4px solid white;
+	 padding-right: 10px;
+}
+.myButton {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	background-color:#33bdef;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	background-color:#019ad2;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.upload {
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+
+  }
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+.search {
+  width: 580px;
+  height: 30px;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 20px;
+  align-items: center;
+}
+.searchTerm {
+  width: 500px;
+  height: 40px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+  
+  
+}
+
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 610px;
+  height : 55px;
+  position: absolute;
+  border: 3px solid #00B4CC;
+  border-radius: 5px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ @-webkit-keyframes gradientBG {
+	 0% {
+		 background-position: 0% 50%;
+	}
+	 100% {
+		 background-position: 100% 50%;
+	}
+}
+ @keyframes gradientBG {
+	 0% {
+		 background-position: 0% 50%;
+	}
+	 100% {
+		 background-position: 100% 50%;
+	}
+}
+ 
