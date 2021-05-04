@@ -28,7 +28,7 @@
 
 
         <?php
-            include "./Database.php";
+            include "./database.php";
             $db = Database::connect();
 
             if ($_POST) { // Si le formulaire a été soumis par l'utilisateur

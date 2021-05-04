@@ -9,32 +9,17 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        include "./database.php";
-        $db = Database::connect();
-        $connect = false;
-        if ($_GET){
-            $name = $_GET['username'];
-            $connect = true;
-        }
-        if ($_POST) {
-            $sql = "INSERT INTO `post` (content) VALUES ('{$_POST['text']}')";
-            $db->query($sql);
-        }
-        Database::disconnect();
-    ?>
-
   <div>
     <div class="sana">
         <div class="header">
-            <h1> <?php echo "Bienvenue ". $name; ?> </h1>
-            
+            <h1> <?php echo "Bienvenue ". $_GET['username']; ?> </h1>
         </div>
         <div class="buttons">
             <?php if ($connect == true){ ?>
-                <a href="./loginAccount.php" class="myButton">Déconnecter</a>
+                <a href="./index.php" class="myButton">Déconnecter</a>
            <?php }
             else { ?>
+                
                 <a href="./loginAccount.php" class="myButton">Connecter</a>
            <?php }
             
@@ -43,35 +28,32 @@
     </div>
 
     <div class="wrap">
-    <div class="search">
-        <form  method = "POST">
-            <div class="search">
-                <input name="text" type="text" class="searchTerm"  placeholder="What's happening?">
-                <div class="upload">
-                    <i class="fas fa-images"></i>
-                    <button type="submit" class="myButton">Tweet</button>
-                 </div>
-            </div>
-        </form>
+        <div class="search">
+            <form  method = "POST" action="upload.php" enctype="multipart/form-data">
+                    <input name="text" type="text" class="searchTerm"  placeholder="What's happening?">
+                    <input type="file" name='fileToUpload' id="fileToUpload" />
+                    <input name="username" type="hidden" value=<?php echo $_GET['username']; ?>>
+                    <button type="submit" class="myButton" name="submit" id="submit">Tweet</button>
+            </form>
+        </div>
     </div>
-    </div>
- <?php
-    foreach ($db->query("SELECT * FROM `post` ") as $post) { ?>
+    <?php
+    include "./database.php";
+    $db = Database::connect();
+    $username = $_GET['username'];
+    foreach ($db->query("SELECT * FROM `post`") as $post) { ?>
         <div id="login-container">
         <div class="profile-img"></div>
         <h1>
             <?php echo $name; ?>
         </h1>
-        <div class="img_tweet">
-           
-        </div>
+        <div class="img_tweet"></div>
         <div>
-            <img src="./img/twitter.png" width=100px alt="">
+            <img src="./img/photo.jpeg" width=100px alt="">
         </div>
         <div class="description">
            <?php  echo $post['content']?>
-        </div>
-        
+        </div> 
         <a href="#" class="myButton">Voir le tweet</a>
         <footer>
             <div class="likes">
@@ -84,9 +66,8 @@
             </div>
         </footer>
     </div>
-
-   <?php } ?> 
-
-
+    <?php 
+     } // end foreach
+    ?> 
 </body>
 </html>

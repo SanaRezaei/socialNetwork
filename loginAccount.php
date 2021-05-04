@@ -32,20 +32,20 @@
         include "./database.php";
         $db = Database::connect();
         $success = false;
-        
         if ($_POST) {
-        foreach ($db->query("SELECT * FROM user") as $user) { 
-            if ($user['username']==$_POST['username'] && $user['password']==$_POST['password'])
-            {
-                $success = true;
-                header("Location: ./index.php?username=" .$user['username']);
+            echo "post <br>";
+            foreach ($db->query("SELECT * FROM user") as $user) { 
+                if ($user['username']==$_POST['username'] && $user['password']==$_POST['password'])
+                {
+                    $success = true;
+                    echo "<br> login succesful";
+                    header("Location: ./index.php?username=" .$user['username']);
+                }
             }
-         
-            elseif (($user['username']==$_POST['username'] || $user['password']==$_POST['password'])) {
-             echo " username or password is incorrect";
+            if (!$success) {
+                echo "<br>username or password is incorrect";
             }
         }
-    }
          Database::disconnect();
     ?>
     
